@@ -1,0 +1,139 @@
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2d2d30;
+    color: #e1e1e1;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #252526;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.header {
+    background: #333333;
+    color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px 8px 0 0;
+}
+
+.form-section {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #b0b0b0;
+    font-weight: 600;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    background: #333333;
+    border: 1px solid #404040;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+.input-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.generate-btn {
+    background: #007acc;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    margin-top: 20px; /* Add space above the button */
+}
+
+.generate-btn:hover {
+    background: #0062a3;
+}
+
+.ofp-section {
+    padding: 20px;
+}
+
+.ofp-content {
+    background: #333333;
+    padding: 20px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    font-family: monospace;
+}
+
+.route-option {
+    background: #333333;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.route-option:hover {
+    background: #3c3c3c;
+}
+
+.route-map {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.runway-group {
+    margin-bottom: 20px;
+}
+
+.runway-group h4 {
+    color: #b0b0b0;
+    margin-bottom: 10px;
+}
+
+#route-map-container {
+    display: none;
+    margin-top: 20px;
+}
+
+/* New CSS for layout adjustments */
+.form-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.form-bottom-left {
+    flex: 1;
+}
+
+.form-bottom-right {
+    flex: 1;
+}
