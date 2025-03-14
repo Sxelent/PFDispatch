@@ -1,25 +1,25 @@
 const mockRoutes = {
     "MDPC-EGKK": [
         { 
-            route: "KATOK2T DCT BANZAI COSTI BOGNA EGKK(26L/R, 08L/R)", 
+            route: "MDPC(08, 09) KATOK2T DCT BANZAI COSTI BOGNA EGKK(26L/R, 08L/R) (Radar Vectored Arrival)", 
             departureRunways: "08 & 09 DEP", 
             arrivalRunways: "26L/R, 08L/R ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "KATOK2T DCT MUNCHY SARGO WIZAD EGKK(26L/R)", 
+            route: "MDPC(08, 09) KATOK2T DCT MUNCHY SARGO WIZAD EGKK(26L/R) (Radar Vectored Arrival)", 
             departureRunways: "08 & 09 DEP", 
             arrivalRunways: "26L/R ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "CHUMA2T DCT KOLBI NOVMA EGKK(08L/R)", 
+            route: "MDPC(08, 09) CHUMA2T DCT KOLBI NOVMA EGKK(08L/R) (Radar Vectored Arrival)", 
             departureRunways: "08 & 09 DEP", 
             arrivalRunways: "08L/R ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "DCT PC113 HDWA BOGNA EGKK(26L/R, 08L/R)", 
+            route: "MDPC(26, 27) DCT PC113 HDWA BOGNA EGKK(26L/R, 08L/R) (Radar Vectored Arrival)", 
             departureRunways: "26 & 27 DEP", 
             arrivalRunways: "26L/R, 08L/R ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
@@ -27,31 +27,31 @@ const mockRoutes = {
     ],
     "EGKK-MDPC": [
         { 
-            route: "NOVMA1X DCT KOLBI POKEG POKEG1W MDPC(08, 09)", 
+            route: "EGKK(26L/R) NOVMA1X DCT KOLBI POKEG POKEG1W MDPC(08, 09) (STAR Arrival)", 
             departureRunways: "26L/R DEP", 
             arrivalRunways: "08 & 09 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "BOGNA1X DCT LOPRO TUPIK BETIR BETIR1W MDPC(08, 09)", 
+            route: "EGKK(26L/R) BOGNA1X DCT LOPRO TUPIK BETIR BETIR1W MDPC(08, 09) (STAR Arrival)", 
             departureRunways: "26L/R DEP", 
             arrivalRunways: "08 & 09 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "NOVMA1X DCT LEDGO FALCON PIXAR MDPC(08, 09)", 
+            route: "EGKK(26L/R) NOVMA1X DCT LEDGO FALCON PIXAR MDPC(08, 09) (Radar Vectored Arrival)", 
             departureRunways: "26L/R DEP", 
             arrivalRunways: "08 & 09 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "NOVMA1X DCT HDWA ODEGI MDPC(08, 09, 26, 27)", 
+            route: "EGKK(26L/R) NOVMA1X DCT HDWA ODEGI MDPC(08, 09, 26, 27) (Radar Vectored Arrival)", 
             departureRunways: "26L/R DEP", 
             arrivalRunways: "08, 09, 26, 27 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "DCT TUNBY ISKAL ENETA ODEGI MDPC(08, 09, 26, 27)", 
+            route: "EGKK(08L/R) DCT TUNBY ISKAL ENETA ODEGI MDPC(08, 09, 26, 27) (Radar Vectored Arrival)", 
             departureRunways: "08L/R DEP", 
             arrivalRunways: "08, 09, 26, 27 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
@@ -59,25 +59,25 @@ const mockRoutes = {
     ],
     "MDPC-EFKT": [
         { 
-            route: "KATOK2T DCT CARME UBER EFLA KEFLA3C EFKT(34)", 
+            route: "MDPC(08, 09) KATOK2T DCT CARME UBER EFLA KEFLA3C EFKT(34) (STAR Arrival)", 
             departureRunways: "08 & 09 DEP", 
             arrivalRunways: "34 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "KATOK2T DCT VAXRI MEROS KONAN SUDIP EFKT(34)", 
+            route: "MDPC(08, 09) KATOK2T DCT VAXRI MEROS KONAN SUDIP EFKT(34) (Radar Vectored Arrival)", 
             departureRunways: "08 & 09 DEP", 
             arrivalRunways: "34 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "KATOK2T DCT HEAT MINTY KETF EFKT(16)", 
+            route: "MDPC(08, 09) KATOK2T DCT HEAT MINTY KETF EFKT(16) (Radar Vectored Arrival)", 
             departureRunways: "08 & 09 DEP", 
             arrivalRunways: "16 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "DCT PC113 JUMBO SARGO FRANE ROSE EFKT(34, 16)", 
+            route: "MDPC(26, 27) DCT PC113 JUMBO SARGO FRANE ROSE EFKT(34, 16) (Radar Vectored Arrival)", 
             departureRunways: "26 & 27 DEP", 
             arrivalRunways: "34, 16 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
@@ -85,19 +85,19 @@ const mockRoutes = {
     ],
     "EFKT-MDPC": [
         { 
-            route: "ROSE3C DCT WIZAD ZENITH BETIR BETIR1W MDPC(08, 09)", 
+            route: "EFKT(34) ROSE3C DCT WIZAD ZENITH BETIR BETIR1W MDPC(08, 09) (STAR Arrival)", 
             departureRunways: "34 DEP", 
             arrivalRunways: "08 & 09 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "ROSE3C DCT AMDUT BRICK BREEZE MDPC(08, 09, 26, 27)", 
+            route: "EFKT(34) ROSE3C DCT AMDUT BRICK BREEZE MDPC(08, 09, 26, 27) (Radar Vectored Arrival)", 
             departureRunways: "34 DEP", 
             arrivalRunways: "08, 09, 26, 27 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "DCT KONAN LUNIK KOPUD GOLVER MDPC(08, 09, 26, 27)", 
+            route: "EFKT(16) DCT KONAN LUNIK KOPUD GOLVER MDPC(08, 09, 26, 27) (Radar Vectored Arrival)", 
             departureRunways: "16 DEP", 
             arrivalRunways: "08, 09, 26, 27 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
@@ -105,19 +105,19 @@ const mockRoutes = {
     ],
     "MDPC-LEMH": [
         { 
-            route: "KATOK2T DCT SYOL4 CARME LEMH(01)", 
+            route: "MDPC(08, 09) KATOK2T DCT SYOL4 CARME LEMH(01) (Radar Vectored Arrival)", 
             departureRunways: "08 & 09 DEP", 
             arrivalRunways: "01 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "KATOK2T DCT DANTE LUNIK LEMH(19)", 
+            route: "MDPC(08, 09) KATOK2T DCT DANTE LUNIK LEMH(19) (Radar Vectored Arrival)", 
             departureRunways: "08 & 09 DEP", 
             arrivalRunways: "19 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "DCT PC113 BREEZE HEAT LEMH(01, 19)", 
+            route: "MDPC(26, 27) DCT PC113 BREEZE HEAT LEMH(01, 19) (Radar Vectored Arrival)", 
             departureRunways: "26 & 27 DEP", 
             arrivalRunways: "01, 19 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
@@ -125,31 +125,31 @@ const mockRoutes = {
     ],
     "LEMH-MDPC": [
         { 
-            route: "ISKAL1D DCT TUPIK BETIR BETIR1W MDPC(08, 09)", 
+            route: "LEMH(01) ISKAL1D DCT TUPIK BETIR BETIR1W MDPC(08, 09) (STAR Arrival)", 
             departureRunways: "01 DEP", 
             arrivalRunways: "08 & 09 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "ISKAL1D DCT FALCON PIXAR MDPC(08, 09)", 
+            route: "LEMH(01) ISKAL1D DCT FALCON PIXAR MDPC(08, 09) (Radar Vectored Arrival)", 
             departureRunways: "01 DEP", 
             arrivalRunways: "08 & 09 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "ISKAL1D DCT KATOK MDPC(26, 27)", 
+            route: "LEMH(01) ISKAL1D DCT KATOK MDPC(26, 27) (Radar Vectored Arrival)", 
             departureRunways: "01 DEP", 
             arrivalRunways: "26 & 27 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "DCT CARME PALMO PIXAR MDPC(08, 09)", 
+            route: "LEMH(19) DCT CARME PALMO PIXAR MDPC(08, 09) (Radar Vectored Arrival)", 
             departureRunways: "19 DEP", 
             arrivalRunways: "08 & 09 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "DCT CARME KATOK MDPC(26, 27)", 
+            route: "LEMH(19) DCT CARME KATOK MDPC(26, 27) (Radar Vectored Arrival)", 
             departureRunways: "19 DEP", 
             arrivalRunways: "26 & 27 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
@@ -157,13 +157,13 @@ const mockRoutes = {
     ],
     "MDPC-GCLP": [
         { 
-            route: "KATOK2T DCT TUPIK GCLP(03L/R, 21L/R)", 
+            route: "MDPC(08, 09) KATOK2T DCT TUPIK GCLP(03L/R, 21L/R) (Radar Vectored Arrival)", 
             departureRunways: "08 & 09 DEP", 
             arrivalRunways: "03L/R, 21L/R ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "DCT PC113 PIXAR GCLP(03L/R, 21L/R)", 
+            route: "MDPC(26, 27) DCT PC113 PIXAR GCLP(03L/R, 21L/R) (Radar Vectored Arrival)", 
             departureRunways: "26 & 27 DEP", 
             arrivalRunways: "03L/R, 21L/R ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
@@ -171,25 +171,25 @@ const mockRoutes = {
     ],
     "GCLP-MDPC": [
         { 
-            route: "ODEGI2A DCT MDPC(08, 09, 26, 27)", 
+            route: "GCLP(03L/R) ODEGI2A DCT MDPC(08, 09, 26, 27) (Radar Vectored Arrival)", 
             departureRunways: "03L/R DEP", 
             arrivalRunways: "08, 09, 26, 27 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "ODEGI2B DCT MDPC(08, 09, 26, 27)", 
+            route: "GCLP(21L/R) ODEGI2B DCT MDPC(08, 09, 26, 27) (Radar Vectored Arrival)", 
             departureRunways: "21L/R DEP", 
             arrivalRunways: "08, 09, 26, 27 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "COSTI4A DCT JELLY KATOK MDPC(26, 27)", 
+            route: "GCLP(03L/R) COSTI4A DCT JELLY KATOK MDPC(26, 27) (Radar Vectored Arrival)", 
             departureRunways: "03L/R DEP", 
             arrivalRunways: "26 & 27 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "COSTI4B DCT JELLY KATOK MDPC(26, 27)", 
+            route: "GCLP(21L/R) COSTI4B DCT JELLY KATOK MDPC(26, 27) (Radar Vectored Arrival)", 
             departureRunways: "21L/R DEP", 
             arrivalRunways: "26 & 27 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
@@ -197,19 +197,19 @@ const mockRoutes = {
     ],
     "MDPC-EGHI": [
         { 
-            route: "KATOK2T DCT BANZAI OPERA BOGNA EGHI(02)", 
+            route: "MDPC(08, 09) KATOK2T DCT BANZAI OPERA BOGNA EGHI(02) (Radar Vectored Arrival)", 
             departureRunways: "08 & 09 DEP", 
             arrivalRunways: "02 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "KATOK2T DCT BANZAI HARDY AMDUT KKS14 EGHI(02, 20)", 
+            route: "MDPC(08, 09) KATOK2T DCT BANZAI HARDY AMDUT KKS14 EGHI(02, 20) (Radar Vectored Arrival)", 
             departureRunways: "08 & 09 DEP", 
             arrivalRunways: "02, 20 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "DCT PC113 FALCON LEDGO NOVMA EGHI(02, 20)", 
+            route: "MDPC(26, 27) DCT PC113 FALCON LEDGO NOVMA EGHI(02, 20) (Radar Vectored Arrival)", 
             departureRunways: "26 & 27 DEP", 
             arrivalRunways: "02, 20 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
@@ -217,13 +217,13 @@ const mockRoutes = {
     ],
     "EGHI-MDPC": [
         { 
-            route: "DCT HAZEL NOVMA HDWA GOLVER MDPC(08, 09, 26, 27)", 
+            route: "EGHI(02) DCT HAZEL NOVMA HDWA GOLVER MDPC(08, 09, 26, 27) (Radar Vectored Arrival)", 
             departureRunways: "02 DEP", 
             arrivalRunways: "08, 09, 26, 27 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
         },
         { 
-            route: "DCT BOGNA DANTE ODEGI MDPC(08, 09, 26, 27)", 
+            route: "EGHI(20) DCT BOGNA DANTE ODEGI MDPC(08, 09, 26, 27) (Radar Vectored Arrival)", 
             departureRunways: "20 DEP", 
             arrivalRunways: "08, 09, 26, 27 ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
