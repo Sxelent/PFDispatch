@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Dispatch System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Virtual Dispatch System</h1>
+        </div>
+        
+        <div class="form-section">
+            <div class="input-group">
+                <label for="callsign">Callsign</label>
+                <input type="text" id="callsign" placeholder="RYR5890">
+            </div>
+            
+            <div class="input-group">
+                <label for="aircraft">Aircraft</label>
+                <input type="text" id="aircraft" placeholder="B737">
+            </div>
+            
+            <div class="input-group">
+                <label for="flightRules">IFR/VFR</label>
+                <select id="flightRules">
+                    <option value="IFR">IFR</option>
+                    <option value="VFR">VFR</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="departure">Departing</label>
+                <input type="text" id="departure" placeholder="MDPC">
+            </div>
+            
+            <div class="input-group">
+                <label for="arrival">Arriving</label>
+                <input type="text" id="arrival" placeholder="EGKK">
+            </div>
+            
+            <div class="input-group">
+                <label for="crzAlt">CRZ FL</label>
+                <input type="number" id="crzAlt" placeholder="380" min="0" max="410">
+            </div>
+            
+            <div class="input-group">
+                <label for="route">Route</label>
+                <textarea id="route" placeholder="Select or enter route"></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label>Available Routes</label>
+                <div id="route-options"></div>
+            </div>
+            
+            <!-- New layout for the bottom section -->
+            <div class="form-bottom">
+                <div class="form-bottom-left">
+                    <button class="generate-btn" onclick="generateOFP()">Generate Flight Plan</button>
+                </div>
+                <div class="form-bottom-right">
+                    <div id="route-map-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg" 
+                             alt="Route Map" 
+                             class="route-map" 
+                             id="route-map">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ofp-section" id="ofp-display" style="display: none;">
+            <h2>Operational Flight Plan</h2>
+            <div class="ofp-content" id="ofp-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
