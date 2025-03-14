@@ -1,234 +1,83 @@
-const mockRoutes = {
-    "MDPC-EGKK": [
-        { 
-            route: "KATOK2T DCT BANZAI COSTI BOGNA EGKK(26L/R, 08L/R)", 
-            departureRunways: "08 & 09 DEP", 
-            arrivalRunways: "26L/R, 08L/R ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "KATOK2T DCT MUNCHY SARGO WIZAD EGKK(26L/R)", 
-            departureRunways: "08 & 09 DEP", 
-            arrivalRunways: "26L/R ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "CHUMA2T DCT KOLBI NOVMA EGKK(08L/R)", 
-            departureRunways: "08 & 09 DEP", 
-            arrivalRunways: "08L/R ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "DCT PC113 HDWA BOGNA EGKK(26L/R, 08L/R)", 
-            departureRunways: "26 & 27 DEP", 
-            arrivalRunways: "26L/R, 08L/R ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        }
-    ],
-    "EGKK-MDPC": [
-        { 
-            route: "NOVMA1X DCT KOLBI POKEG POKEG1W MDPC(08, 09)", 
-            departureRunways: "26L/R DEP", 
-            arrivalRunways: "08 & 09 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "BOGNA1X DCT LOPRO TUPIK BETIR BETIR1W MDPC(08, 09)", 
-            departureRunways: "26L/R DEP", 
-            arrivalRunways: "08 & 09 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "NOVMA1X DCT LEDGO FALCON PIXAR MDPC(08, 09)", 
-            departureRunways: "26L/R DEP", 
-            arrivalRunways: "08 & 09 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "NOVMA1X DCT HDWA ODEGI MDPC(08, 09, 26, 27)", 
-            departureRunways: "26L/R DEP", 
-            arrivalRunways: "08, 09, 26, 27 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "DCT TUNBY ISKAL ENETA ODEGI MDPC(08, 09, 26, 27)", 
-            departureRunways: "08L/R DEP", 
-            arrivalRunways: "08, 09, 26, 27 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        }
-    ],
-    "MDPC-EFKT": [
-        { 
-            route: "KATOK2T DCT CARME UBER EFLA KEFLA3C EFKT(34)", 
-            departureRunways: "08 & 09 DEP", 
-            arrivalRunways: "34 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "KATOK2T DCT VAXRI MEROS KONAN SUDIP EFKT(34)", 
-            departureRunways: "08 & 09 DEP", 
-            arrivalRunways: "34 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "KATOK2T DCT HEAT MINTY KETF EFKT(16)", 
-            departureRunways: "08 & 09 DEP", 
-            arrivalRunways: "16 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "DCT PC113 JUMBO SARGO FRANE ROSE EFKT(34, 16)", 
-            departureRunways: "26 & 27 DEP", 
-            arrivalRunways: "34, 16 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        }
-    ],
-    "EFKT-MDPC": [
-        { 
-            route: "ROSE3C DCT WIZAD ZENITH BETIR BETIR1W MDPC(08, 09)", 
-            departureRunways: "34 DEP", 
-            arrivalRunways: "08 & 09 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "ROSE3C DCT AMDUT BRICK BREEZE MDPC(08, 09, 26, 27)", 
-            departureRunways: "34 DEP", 
-            arrivalRunways: "08, 09, 26, 27 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "DCT KONAN LUNIK KOPUD GOLVER MDPC(08, 09, 26, 27)", 
-            departureRunways: "16 DEP", 
-            arrivalRunways: "08, 09, 26, 27 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        }
-    ],
-    "MDPC-LEMH": [
-        { 
-            route: "KATOK2T DCT SYOL4 CARME LEMH(01)", 
-            departureRunways: "08 & 09 DEP", 
-            arrivalRunways: "01 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "KATOK2T DCT DANTE LUNIK LEMH(19)", 
-            departureRunways: "08 & 09 DEP", 
-            arrivalRunways: "19 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "DCT PC113 BREEZE HEAT LEMH(01, 19)", 
-            departureRunways: "26 & 27 DEP", 
-            arrivalRunways: "01, 19 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        }
-    ],
-    "LEMH-MDPC": [
-        { 
-            route: "ISKAL1D DCT TUPIK BETIR BETIR1W MDPC(08, 09)", 
-            departureRunways: "01 DEP", 
-            arrivalRunways: "08 & 09 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "ISKAL1D DCT FALCON PIXAR MDPC(08, 09)", 
-            departureRunways: "01 DEP", 
-            arrivalRunways: "08 & 09 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "ISKAL1D DCT KATOK MDPC(26, 27)", 
-            departureRunways: "01 DEP", 
-            arrivalRunways: "26 & 27 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "DCT CARME PALMO PIXAR MDPC(08, 09)", 
-            departureRunways: "19 DEP", 
-            arrivalRunways: "08 & 09 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "DCT CARME KATOK MDPC(26, 27)", 
-            departureRunways: "19 DEP", 
-            arrivalRunways: "26 & 27 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        }
-    ],
-    "MDPC-GCLP": [
-        { 
-            route: "KATOK2T DCT TUPIK GCLP(03L/R, 21L/R)", 
-            departureRunways: "08 & 09 DEP", 
-            arrivalRunways: "03L/R, 21L/R ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "DCT PC113 PIXAR GCLP(03L/R, 21L/R)", 
-            departureRunways: "26 & 27 DEP", 
-            arrivalRunways: "03L/R, 21L/R ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        }
-    ],
-    "GCLP-MDPC": [
-        { 
-            route: "ODEGI2A DCT MDPC(08, 09, 26, 27)", 
-            departureRunways: "03L/R DEP", 
-            arrivalRunways: "08, 09, 26, 27 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "ODEGI2B DCT MDPC(08, 09, 26, 27)", 
-            departureRunways: "21L/R DEP", 
-            arrivalRunways: "08, 09, 26, 27 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "COSTI4A DCT JELLY KATOK MDPC(26, 27)", 
-            departureRunways: "03L/R DEP", 
-            arrivalRunways: "26 & 27 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "COSTI4B DCT JELLY KATOK MDPC(26, 27)", 
-            departureRunways: "21L/R DEP", 
-            arrivalRunways: "26 & 27 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        }
-    ],
-    "MDPC-EGHI": [
-        { 
-            route: "KATOK2T DCT BANZAI OPERA BOGNA EGHI(02)", 
-            departureRunways: "08 & 09 DEP", 
-            arrivalRunways: "02 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "KATOK2T DCT BANZAI HARDY AMDUT KKS14 EGHI(02, 20)", 
-            departureRunways: "08 & 09 DEP", 
-            arrivalRunways: "02, 20 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "DCT PC113 FALCON LEDGO NOVMA EGHI(02, 20)", 
-            departureRunways: "26 & 27 DEP", 
-            arrivalRunways: "02, 20 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        }
-    ],
-    "EGHI-MDPC": [
-        { 
-            route: "DCT HAZEL NOVMA HDWA GOLVER MDPC(08, 09, 26, 27)", 
-            departureRunways: "02 DEP", 
-            arrivalRunways: "08, 09, 26, 27 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        },
-        { 
-            route: "DCT BOGNA DANTE ODEGI MDPC(08, 09, 26, 27)", 
-            departureRunways: "20 DEP", 
-            arrivalRunways: "08, 09, 26, 27 ARR",
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
-        }
-    ]
-};
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Dispatch System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Virtual Dispatch System</h1>
+        </div>
+        
+        <div class="form-section">
+            <div class="input-group">
+                <label for="callsign">Callsign</label>
+                <input type="text" id="callsign" placeholder="RYR5890">
+            </div>
+            
+            <div class="input-group">
+                <label for="aircraft">Aircraft</label>
+                <input type="text" id="aircraft" placeholder="B737">
+            </div>
+            
+            <div class="input-group">
+                <label for="flightRules">IFR/VFR</label>
+                <select id="flightRules">
+                    <option value="IFR">IFR</option>
+                    <option value="VFR">VFR</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="departure">Departing</label>
+                <input type="text" id="departure" placeholder="MDPC">
+            </div>
+            
+            <div class="input-group">
+                <label for="arrival">Arriving</label>
+                <input type="text" id="arrival" placeholder="EGKK">
+            </div>
+            
+            <div class="input-group">
+                <label for="crzAlt">CRZ FL</label>
+                <input type="number" id="crzAlt" placeholder="380" min="0" max="410">
+            </div>
+            
+            <div class="input-group">
+                <label for="route">Route</label>
+                <textarea id="route" placeholder="Select or enter route"></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label>Available Routes</label>
+                <div id="route-options"></div>
+            </div>
+            
+            <!-- New layout for the bottom section -->
+            <div class="form-bottom">
+                <div class="form-bottom-left">
+                    <button class="generate-btn" onclick="generateOFP()">Generate Flight Plan</button>
+                </div>
+                <div class="form-bottom-right">
+                    <div id="route-map-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg" 
+                             alt="Route Map" 
+                             class="route-map" 
+                             id="route-map">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-// Rest of the JavaScript code remains the same
+        <div class="ofp-section" id="ofp-display" style="display: none;">
+            <h2>Operational Flight Plan</h2>
+            <div class="ofp-content" id="ofp-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
