@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Dispatch System</title>
+    <style>
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #2d2d30;
+            color: #e1e1e1;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #252526;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            background: #333333;
+            color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .form-section {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            border-bottom: 1px solid #3c3c3c;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #b0b0b0;
+            font-weight: 600;
+        }
+        
+        .input-group input, 
+        .input-group select, 
+        .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            background: #333333;
+            border: 1px solid #404040;
+            border-radius: 4px;
+            color: #ffffff;
+        }
+        
+        .input-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .generate-btn {
+            background: #007acc;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+            margin-top: 20px; /* Add space above the button */
+        }
+        
+        .generate-btn:hover {
+            background: #0062a3;
+        }
+        
+        .ofp-section {
+            padding: 20px;
+        }
+        
+        .ofp-content {
+            background: #333333;
+            padding: 20px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        
+        .route-option {
+            background: #333333;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .route-option:hover {
+            background: #3c3c3c;
+        }
+        
+        .route-map {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        
+        .runway-group {
+            margin-bottom: 20px;
+        }
+        
+        .runway-group h4 {
+            color: #b0b0b0;
+            margin-bottom: 10px;
+        }
+        
+        #route-map-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* New CSS for layout adjustments */
+        .form-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .form-bottom-left {
+            flex: 1;
+        }
+
+        .form-bottom-right {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Virtual Dispatch System</h1>
+        </div>
+        
+        <div class="form-section">
+            <div class="input-group">
+                <label for="callsign">Callsign</label>
+                <input type="text" id="callsign" placeholder="RYR5890">
+            </div>
+            
+            <div class="input-group">
+                <label for="aircraft">Aircraft</label>
+                <input type="text" id="aircraft" placeholder="B737">
+            </div>
+            
+            <div class="input-group">
+                <label for="flightRules">IFR/VFR</label>
+                <select id="flightRules">
+                    <option value="IFR">IFR</option>
+                    <option value="VFR">VFR</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="departure">Departing</label>
+                <input type="text" id="departure" placeholder="MDPC">
+            </div>
+            
+            <div class="input-group">
+                <label for="arrival">Arriving</label>
+                <input type="text" id="arrival" placeholder="EGKK">
+            </div>
+            
+            <div class="input-group">
+                <label for="crzAlt">CRZ FL</label>
+                <input type="number" id="crzAlt" placeholder="380" min="0" max="410">
+            </div>
+            
+            <div class="input-group">
+                <label for="route">Route</label>
+                <textarea id="route" placeholder="Select or enter route"></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label>Available Routes</label>
+                <div id="route-options"></div>
+            </div>
+            
+            <!-- New layout for the bottom section -->
+            <div class="form-bottom">
+                <div class="form-bottom-left">
+                    <button class="generate-btn" onclick="generateOFP()">Generate Flight Plan</button>
+                </div>
+                <div class="form-bottom-right">
+                    <div id="route-map-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg" 
+                             alt="Route Map" 
+                             class="route-map" 
+                             id="route-map">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ofp-section" id="ofp-display" style="display: none;">
+            <h2>Operational Flight Plan</h2>
+            <div class="ofp-content" id="ofp-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const mockRoutes = {
+            "MDPC-EGKK": [
+                { 
+                    route: "KATOK2T BANZAI OPERA KUNAV KUNAV1G", 
+                    departureRunways: "08 & 09 DEP", 
+                    arrivalRunways: "26L ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                },
+                { 
+                    route: "KATOK2T BANZAI OPERA LIZAD VASUX VASUX1G", 
+                    departureRunways: "08 & 09 DEP", 
+                    arrivalRunways: "08R ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                }
+            ],
+            "MDPC-GCLP": [
+                { 
+                    route: "KATOK2T LALTO LORPO LORPO1C", 
+                    departureRunways: "08 & 09 DEP", 
+                    arrivalRunways: "21L & 21R ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                },
+                { 
+                    route: "KATOK2T LALTO LP103 BANZAI DRANO LP101", 
+                    departureRunways: "08 & 09 DEP", 
+                    arrivalRunways: "03L & 03R ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                }
+            ],
+            "EGKK-MDPC": [
+                { 
+                    route: "NOVMA1X LEDGO FALCON POKEG POKEG1W", 
+                    departureRunways: "26L DEP", 
+                    arrivalRunways: "08 & 09 ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                },
+                { 
+                    route: "IMVUR1Z NOVMA ROGER FALCON POKEG POKEG1W", 
+                    departureRunways: "08R DEP", 
+                    arrivalRunways: "08 & 09 ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                }
+            ],
+            "EGKK-GCLP": [
+                { 
+                    route: "NOVMA1X ROGER BRICK ORTIS5C", 
+                    departureRunways: "26L DEP", 
+                    arrivalRunways: "21L & 21R ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                },
+                { 
+                    route: "IMVUR1Z NOVMA ROGER BRICK ORTIS5C", 
+                    departureRunways: "08R DEP", 
+                    arrivalRunways: "21L & 21R ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                },
+                { 
+                    route: "NOVMA1X ROGER BRICK KONBA4B", 
+                    departureRunways: "26L DEP", 
+                    arrivalRunways: "03L & 03R ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                },
+                { 
+                    route: "IMVUR1Z NOVMA ROGER BRICK KONBA4B", 
+                    departureRunways: "08R DEP", 
+                    arrivalRunways: "03L & 03R ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                }
+            ],
+            "EGKK-MDST": [
+                { 
+                    route: "NOVMA1X LEDGO FALCON POKEG PC115 PC113", 
+                    departureRunways: "26L DEP", 
+                    arrivalRunways: "29 ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                },
+                { 
+                    route: "IMVUR1Z NOVMA ROGER FALCON POKEG PC115 PC113", 
+                    departureRunways: "08R DEP", 
+                    arrivalRunways: "29 ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                }
+            ],
+            "GCLP-MDPC": [
+                { 
+                    route: "KOPUD1B BRICK FALCON POKEG POKEG1W", 
+                    departureRunways: "21L & 21R DEP", 
+                    arrivalRunways: "08 & 09 ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                },
+                { 
+                    route: "KOPUD1A BRICK FALCON POKEG POKEG1W", 
+                    departureRunways: "21L & 21R DEP", 
+                    arrivalRunways: "08 & 09 ARR",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+                }
+            ]
+        };
+
+        function showRouteOptions() {
+            const dep = document.getElementById('departure').value.toUpperCase();
+            const arr = document.getElementById('arrival').value.toUpperCase();
+            const routeKey = `${dep}-${arr}`;
+            
+            const routeOptionsDiv = document.getElementById('route-options');
+            routeOptionsDiv.innerHTML = '';
+
+            if (mockRoutes[routeKey]) {
+                const runwayGroups = mockRoutes[routeKey].reduce((groups, route) => {
+                    const key = `${route.departureRunways} → ${route.arrivalRunways}`;
+                    if (!groups[key]) groups[key] = [];
+                    groups[key].push(route);
+                    return groups;
+                }, {});
+
+                for (const [runwayPair, routes] of Object.entries(runwayGroups)) {
+                    const groupDiv = document.createElement('div');
+                    groupDiv.className = 'runway-group';
+                    groupDiv.innerHTML = `<h4>${runwayPair}</h4>`;
+                    
+                    routes.forEach(route => {
+                        const routeOption = document.createElement('div');
+                        routeOption.className = 'route-option';
+                        routeOption.textContent = route.route;
+                        routeOption.onclick = () => {
+                            document.getElementById('route').value = route.route;
+                            document.getElementById('route-map').src = route.image;
+                            document.getElementById('route-map-container').style.display = 'block';
+                        };
+                        groupDiv.appendChild(routeOption);
+                    });
+                    
+                    routeOptionsDiv.appendChild(groupDiv);
+                }
+            }
+        }
+
+        function generateOFP() {
+            const route = document.getElementById('route').value;
+            if (!route.trim()) {
+                alert("Please select or enter a route!");
+                return;
+            }
+
+            const ofpText = `
+Callsign: ${document.getElementById('callsign').value || 'N/A'}
+Aircraft: ${document.getElementById('aircraft').value || 'N/A'}
+IFR/VFR: ${document.getElementById('flightRules').value}
+Departing: ${document.getElementById('departure').value.toUpperCase()}
+Arriving: ${document.getElementById('arrival').value.toUpperCase()}
+CRZ FL: ${document.getElementById('crzAlt').value || 'N/A'}
+Route: ${route}
+            `;
+
+            document.getElementById('ofp-content').textContent = ofpText;
+            document.getElementById('ofp-display').style.display = 'block';
+        }
+
+        // Event listeners
+        document.getElementById('departure').addEventListener('input', showRouteOptions);
+        document.getElementById('arrival').addEventListener('input', showRouteOptions);
+    </script>
+</body>
+</html>
