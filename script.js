@@ -1,6 +1,7 @@
 const mockRoutes = {
     "MDPC-EGKK": [
-        {            route: "KATOK2T DCT BANZAI COSTI BOGNA, 
+        {            
+            route: "KATOK2T DCT BANZAI COSTI BOGNA, 
             departureRunways: "08 & 09 DEP", 
             arrivalRunways: "26L/R, 08L/R ARR",
             image: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
